@@ -49,6 +49,7 @@
   th{background:var(--accent-soft); font-weight:600; color:var(--accent); white-space:nowrap}
   tbody tr:nth-child(even) td{background:var(--card-2)}
   .none{color:var(--ink-3)}
+  .co{color:var(--ink-3); font-size:12.5px}
   .pending{background:var(--pending-bg); color:var(--pending-fg); font-weight:600}
   .callout{
     margin:14px 0; padding:14px 16px; background:var(--card);
@@ -84,7 +85,7 @@
 <header>
   <h1>《骑士也拾荒》隐私政策</h1>
   <div class="sub">
-    更新日期：<b>2026年11月6日</b>　生效日期：<b>2026年10月9日</b>
+    更新日期：<b>2026年11月18日</b>　生效日期：<b>2026年10月9日</b>
   </div>
 </header>
 
@@ -118,7 +119,7 @@
   <p>游戏运行过程中会产生下列数据。这些数据默认<strong>仅保存在您设备的应用本地目录中，不会自动上传到任何服务器</strong>：</p>
   <ul>
     <li>游戏存档：角色属性与天赋、装备与配件、背包与仓库物品、金币与钻石、关卡与波次进度、图鉴与宠物收集状态；</li>
-    <li>游戏设置：音乐与音效音量、画面与操作偏好、个性化广告偏好、各项功能开关；</li>
+    <li>游戏设置：音乐与音效音量、画面与操作偏好、各项功能开关；</li>
     <li>运行状态文件：用于判断上一次战斗是否被异常中断，以便正确恢复进度。</li>
   </ul>
   <p>上述数据完全由您掌控。您可以通过系统设置中的“清除数据”或直接卸载游戏来删除全部内容，删除后不可恢复。</p>
@@ -129,7 +130,7 @@
 
   <h3>2.3 激励广告</h3>
   <p>游戏提供“观看激励视频获取奖励”的可选功能。当您<strong>主动选择</strong>观看激励广告时，广告服务可能处理设备品牌与型号、操作系统版本、屏幕信息、网络状态、IP 地址、应用包名与版本、OAID 或 AndroidID 等设备标识符、广告展示与点击记录、崩溃与性能信息，用于广告展示、效果统计、归因和反作弊。</p>
-  <p>游戏提供个性化广告设置。关闭个性化广告后，我们会向广告服务传递该选择；但您仍可能看到非个性化广告。观看广告完全自愿，不观看不影响核心玩法的正常进行。</p>
+  <p>本游戏<strong>不提供</strong>游戏内「个性化广告」独立开关，广告由广告服务按其默认规则投放。如您希望限制个性化广告，可以通过以下两种方式：① 在 Android 系统设置 → 隐私（部分机型为「安全与隐私」）→ 广告 中，选择「删除广告 ID」或「重置广告标识符」，此后广告服务将无法使用您的广告标识符进行个性化推荐；② 通过本政策第十节的联系方式向我们提出，我们会在收到请求后协助处理。观看广告完全自愿，不观看不影响核心玩法的正常进行。</p>
 
   <h3>2.4 网络</h3>
   <p>本游戏的核心玩法可完全离线进行。在以下情形，游戏会连接网络：</p>
@@ -161,7 +162,9 @@
     <tbody>
       <tr><td>网络访问（INTERNET）</td><td>申请</td><td>账号登录、云存档、激励广告的联网请求，以及校准游戏内时间的服务器时间请求</td></tr>
       <tr><td>网络状态（ACCESS_NETWORK_STATE）</td><td>申请</td><td>判断当前网络是否可用，优化加载与提示</td></tr>
+      <tr><td>Wi-Fi 状态（ACCESS_WIFI_STATE）</td><td>申请</td><td>判断网络类型，用于优化广告加载与填充</td></tr>
       <tr><td>存储（外部存储读写）</td><td>申请</td><td>游戏资源与广告素材的必要文件缓存</td></tr>
+      <tr><td>请求安装应用（REQUEST_INSTALL_PACKAGES）</td><td>申请</td><td>广告中可能包含应用下载内容，需此权限才能完成安装；不观看广告时不会触发</td></tr>
     </tbody>
   </table>
   <p>除上述权限外，本游戏<strong>不申请任何其他系统权限</strong>：不申请位置信息、电话与通讯录、短信、相机、麦克风、蓝牙、传感器等与游戏功能无关的权限。若后续版本因新增功能确需申请其他权限，我们会在申请前明确告知用途，并在获得您的授权后才会使用；您也可以随时在系统设置中拒绝或撤回授权。</p>
@@ -183,13 +186,14 @@
         <td><a href="https://developer.taptap.cn/docs/sdk/start/agreement/" target="_blank" rel="noopener">TapSDK 隐私政策</a></td>
       </tr>
       <tr>
-        <td>激励广告 SDK<span class="pending">（名称待定）</span></td>
-        <td>激励视频广告的展示、统计、归因与反作弊</td>
-        <td>设备品牌与型号、操作系统版本、网络状态、IP 地址、应用包名与版本、OAID 或 AndroidID 等设备标识符、广告展示与点击记录</td>
-        <td class="pending">待接入时补充</td>
+        <td><strong>TapADN SDK</strong><br><span class="co">上海艾得蒽数字科技有限公司</span></td>
+        <td>广告投放及监测归因、反作弊、统计分析、减少 App 崩溃<br><span class="co">（向您展示激励视频广告时，由 SDK 自行采集）</span></td>
+        <td>设备标识符（OAID、AndroidID、AAID、VAID）、IP 地址、设备品牌与型号、软件系统版本、屏幕密度与分辨率、设备语言与时区、CPU 信息、可用存储空间、手机系统重启时间、磁盘总空间、系统总内存、运营商信息、Wi-Fi 状态、网络信号强度、应用包名、运行中的进程信息、版本号、应用前后台状态</td>
+        <td><a href="https://ssp.dirichlet.cn/docs/agreement" target="_blank" rel="noopener">TapADN 隐私政策</a></td>
       </tr>
     </tbody>
   </table>
+  <p><strong>我们已主动关闭的可选采集项</strong>：本游戏在接入配置中关闭了位置信息、设备传感器信息、已安装应用列表的采集，仅保留广告投放与反作弊所必需的最小范围。如需限制个性化广告，可参照第 2.3 节说明通过 Android 系统设置删除广告 ID，或通过本政策第十节的联系方式与我们联系。</p>
   <p>如未来接入更多第三方服务，本表格会同步更新，并在游戏内提示您重新阅读本政策。</p>
 </section>
 
@@ -212,7 +216,7 @@
 <section id="s7">
   <h2 class="sec">七、您的权利</h2>
   <ul>
-    <li><strong>关闭个性化广告</strong>：您可以在游戏设置中关闭个性化广告。</li>
+    <li><strong>限制个性化广告</strong>：本游戏不提供游戏内开关。您可以在 Android 系统设置 → 隐私 → 广告 中删除广告 ID 或重置广告标识符，也可以按第十节的联系方式向我们提出，我们将协助处理。</li>
     <li><strong>不登录</strong>：您可以选择不登录 TapTap，继续使用不依赖登录的本地功能。</li>
     <li><strong>删除本地数据</strong>：通过系统设置中的“清除数据”或卸载游戏，即可删除全部本地数据，删除后不可恢复。</li>
     <li><strong>管理账号与云存档</strong>：您可以通过 TapTap 提供的账号与云存档管理方式管理相关数据。</li>
