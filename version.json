@@ -5,7 +5,7 @@
     "enabled": true,
     "latest_version": "V1.0",
     "review_versions": [],
-    "latest_code": 2026112301,
+    "latest_code": 2026112303,
     "latest_name": "V1.0",
     "min_code": 0,
     "force_below_min": false,
@@ -14,5 +14,5 @@
     "prompt_gap_hours": 0,
     "review_codes": []
   },
-  "_generated_at": "2026-11-23 16:43:19"
+  "_generated_at": "2026-11-23 23:46:43"
 }
