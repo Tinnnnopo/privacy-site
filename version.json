@@ -3,10 +3,10 @@
   "taptap": {
     "app_id": "966384",
     "enabled": true,
-    "latest_version": "V1.0",
+    "latest_version": "V1.1",
     "review_versions": [],
-    "latest_code": 2026112301,
-    "latest_name": "V1.0",
+    "latest_code": 2026112345,
+    "latest_name": "V1.1",
     "min_code": 0,
     "force_below_min": false,
     "notes": "",
@@ -14,5 +14,5 @@
     "prompt_gap_hours": 0,
     "review_codes": []
   },
-  "_generated_at": "2026-11-23 16:43:19"
+  "_generated_at": "2026-11-23 16:42:19"
 }
